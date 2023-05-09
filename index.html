@@ -1,108 +1,144 @@
+
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flexbox Pricing Table</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sono:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Sono', sans-serif;
-      padding: 50px;
-    }
-    .pricing-container{
-      display: flex;
-      gap:2rem;
-      flex-direction: row;
-      align-items: center;
-      height: 100vh;
-      justify-content: center;
-      
-    }
-    .pricing-plan{
-      flex: 1;
-      max-width: 400px;
-      background-color: whitesmoke;
-      padding: 20px;
-      border-radius: 5px;
-      text-align: center;
-      
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Tag</title>
+    <style>
+
+     .container{
+        display: flex;
+        justify-content: space-evenly;
+        height: 100vh;
+        align-items: center;
+        gap: 20px
+     }
+
+     .pricing-box{
+        flex: 1;
+        max-width: 200px;
+        padding: 20px;
+        padding-right: 50px;
+        text-align: center;
+        border-radius: 20px;
+     }
+
+     .list{
+        list-style: none;
+     }
+
+     li{
+        padding-bottom: 5px;
+        font-size: 20px;
+        font-weight: 100px;
+     }
+
+     .list5{
+        padding-bottom: 30px;
+        margin: 0px;
+     }
+
+     button{
+        padding: 10px;
+        border-radius: 10px;
+        background-color: black;
+        color: white;
+        border: solid black;
+        
+     }
+     .list1{
+        padding-bottom: 20px;
+        border-radius: 10px;
+        padding-top: 20px;
+        border: 2px solid;
+        font-weight: bold;
+     }
+
+     .list2{
+        padding-top: 10px;
+     }
+
+     span{
+      font-weight: bolder;
+     }
      
+     .lab{
+      color: aliceblue;
+     }
+
+     .mastif{
+      background-color: black;
+      color: azure;
+      border: 1px solid black;
+     }
+
+     .gradient-background {
+    background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+    
     }
 
-    .plan-button{
-      background-color: orangered;
-      border: orangered;
-      color: white;
-      padding: 5px;
-      border-radius: 10%;
-     
-     
+    @keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
     }
-    
-    .plan-title{
-      text-align: center;
+    50% {
+        background-position: 100% 50%;
     }
-    .plan-features{
-      list-style: none;
-      padding: 0px;
-      margin: 0px;
+    100% {
+        background-position: 0% 50%;
     }
-    
-    .plan-features>li{
-      margin-bottom: 20px;
-    }
-    h1{
-      text-align: center;
-      font-size: 48px;
     }
 
-    /* Hint: What can you do with a media query and flexbox? */
     @media (max-width: 680px) {
-      .pricing-container{
+      .container{
         flex-direction: column;
         height: 100%;
       }
     }
-  </style>
+
+
+
+    </style>
 </head>
 
+
+
 <body>
-  <div class="pricing-container">
-    <div class="pricing-plan">
-      <div class="plan-title"><h2>Basic</h2></div>
-      <div class="plan-price"><h1>$9.99/month</h1></div>
-      <ul class="plan-features">
-        <li>✅ 10GB Storage</li>
-        <li>✅ 1 User</li>
-        <li>🚫 Support</li>
-      </ul>
-      <button id="first-button" class="plan-button">Sign Up</a>
+    <div class="container box">
+        <div class="pricing-box gradient-background">
+            <ul class="list">
+                <li class="list1">Chihuahua</li>
+                <li class="list2"><span>$0</span>/mo</li>
+                <li>5 Matches daily</li>
+                <li>10 Messages daily</li>
+                <li class="list5">unlimited App Usage</li>
+                <li><button>Get Started</button></li>
+            </ul>
+       </div>
+       <div class="pricing-box gradient-background">
+         <ul class="list">
+             <li class="list1 lab">Labrador</li>
+             <li class="list2"><span>$15</span>/mo</li>
+             <li>Unlimited Matches</li>
+             <li>unlimited Messages</li>
+             <li class="list5">unlimited App Usage</li>
+             <li><button>Get Started</button></li>
+         </ul>
+       </div>
+       <div class="pricing-box gradient-background">
+         <ul class="list">
+             <li class="list1 mastif">Mastif</li>
+             <li class="list2"><span>$29</span>/mo</li>
+             <li>Priority Listing</li>
+             <li>unlimited Messages</li>
+             <li class="list5">unlimited App Usage</li>
+             <li><button>Get Started</button></li>
+         </ul>
+         
     </div>
-    <div class="pricing-plan">
-      <div class="plan-title"><h2>Standard</h2></div>
-      <div class="plan-price"><h1>$19.99/month</h1></div>
-      <ul class="plan-features">
-        <li>✅ 50GB Storage</li>
-        <li>✅ 5 Users</li>
-        <li>✅ Phone &amp; Email Support</li>
-      </ul>
-      <button id="second-button" class="plan-button">Sign Up</a>
-    </div>
-    <div class="pricing-plan">
-      <div class="plan-title"><h2>Premium</h2></div>
-      <div class="plan-price"><h1>$49.99/month</h1></div>
-      <ul class="plan-features">
-        <li>✅ 100GB Storage</li>
-        <li>✅ 10 Users</li>
-        <li>✅ 24/7 Support</li>
-      </ul>
-      <button id="third-button" class="plan-button">Sign Up</a>
-    </div>
-  </div>
-
 </body>
-
 </html>
